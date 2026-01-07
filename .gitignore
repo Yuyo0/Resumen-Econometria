@@ -7,6 +7,5 @@ build/
 *.fls
 *.fdb_latexmk
 *.synctex.gz
-*.pdf
 # (Opcional: comenta *.pdf si quieres guardar el PDF final en GitHub,
 # pero generalmente se recomienda compilarlo localmente)
