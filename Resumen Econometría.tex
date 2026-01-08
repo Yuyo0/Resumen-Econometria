@@ -1609,6 +1609,41 @@ adicional para protegerse frente a esa amenaza. La desventaja de los errores est
 consiste en que el estimador MCO tendrá una mayor varianza que el estimador MCP (basado
 en la verdadera función de la varianza condicional), al menos asintóticamente.
 
+\section{Apéndice}
+
+\subsection*{Apéndice 17.2: Dos desigualdades}
+
+\subsubsection*{La desiguldad de Chebychev}
+La desigualdad de Chebychev utiliza la varianza de la variable aleatoria $V$ con el fin de acotar la probabilidad de que
+$V$ se encuentre a más distancia que $\pm \delta$ respecto de su media, donde $\delta$ es una constante positiva:
+$$\Pr(|V-\mu_V|\geqslant\delta)\leqslant\frac{\operatorname{var}(V)}{\delta^2}$$
+
+La demostración es la siguiente, sea $W = V -\mu_V$, sea $f$ la f.d.p. de $W$, y sea $\delta$ cualquier número positivo. Ahora
+\begin{align}
+E(W^{2}) & =\int_{-\infty}^{\infty}w^{2}f(w)dw \\
+ & =\int_{-\infty}^{-\delta}w^{2}f(w)dw+\int_{-\delta}^{\delta}w^{2}f(w)dw+\int_{\delta}^{\infty}w^{2}f(w)dw \\
+ & \geqslant\int_{-\infty}^{-\delta}w^{2}f(w)dw+\int_{\delta}^{\infty}w^{2}f(w)dw \\
+ & \geqslant\delta^{2}\left[\int_{-\infty}^{-\delta}f(w)dw+\int_{\delta}^{\infty}f(w)dw\right] \\
+ & =\delta^{2}\Pr(|W|\geqslant\delta),
+\end{align}
+
+La primera desigualdad se cumple debido a que el término que no es tenido en cuenta es no
+negativo, la segunda desigualdad se cumple debido a que $w^2 \geqslant \delta^2$ a lo largo de todo el rango de integración y la última
+igualdad se cumple por la definición de $Pr(\mid W\mid \geqslant \delta)$. ustituyendo $W = V -\mu_V$ en la última expresión, teniendo en
+cuenta que $E(W^2) = E[(V -\mu_V)^2] = var(V)$, y reordenando se obtiene la desigualdad. Si $V$ es discreta, esta prueba es aplicable con sumatorios en sustitución de las integrales.
+
+\subsubsection*{La desigualdad de Cauchy-Schwarz}
+
+La desigualdad de Cauchy-Schwarz es una generalización de la desigualdad de la correlación $\mid \rho_{XY}\mid \leqslant 1$, para 
+incorporar medias distintas de cero. La desigualdad de Cauchy-Schwarz es:
+$$|E(XY)|\leqslant\sqrt{E(X^2)E(Y^2)}$$
+
+La demostración es similar a la prueba de la desigualdad de la correlación del Apéndice 2.1. Sea
+$W = Y + bX$, donde b es una constante. Entonces $E(W^2) = E(Y^2) + 2bE(XY) + b^2E(X^2)$. Ahora sea 
+$b =-E(XY)/E(X^2)$ por lo que (después de la simplificación) la expresión se convierte en 
+$E(W^2)=E(Y^2)- [E(XY)]^2/E(X^2)$. Debido a que $E(W^2) = 0$ (debido a que $W^2 \geqslant 0$), debe ocurrir que 
+$[E(XY)]^2 = E(X^2)E(Y^2)$, y la desigualdad de Cauchy-Schwarz se deduce tomando la raíz cuadrada.
+
 % ------------------------------------------
 % CAPÍTULO 6
 % ------------------------------------------
