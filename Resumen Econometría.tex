@@ -841,6 +841,7 @@ X solo explica una pequeña parte de Y.
     \item $E(u_i | X_i) = 0$ (Media condicional del error es cero).
     \item $(X_i, Y_i)$ son i.i.d. (Independientes e idénticamente distribuidas).
     \item Los valores atípicos son improbables (curtosis finita).
+\label{cc:4.3}
 \end{enumerate}
 \end{conceptoclave}
 
@@ -1677,9 +1678,12 @@ significa que el término de error (que contiene a este factor) está correlacio
 $X_i$. Esto causa que el estimador MCO sea sesgado. Este sesgo no desaparece incluso en muestras 
 muy grandes, y el estimador MCO es inconsistente.
 
-Sea $R^2_{xu}$ la correlación entre $X_i$ y $u_i$, y que se cumplen el 2do y 3er supuesto de MCO, entonces el
+Sea $\rho^2_{xu}$ la correlación entre $X_i$ y $u_i$, y que se cumplen el 2do y 3er supuesto de MCO, entonces el
 estimador MCO tiene el límite:
-$$ \hat{\beta}_1 \xrightarrow{p} \beta_1 + \rho_{Xu} \frac{\sigma_u}{\sigma_X} $$
+\begin{equation}
+\hat{\beta}_1 \xrightarrow{p} \beta_1 + \rho_{Xu} \frac{\sigma_u}{\sigma_X}
+\label{eq:6.1}
+\end{equation}
 
 Esto ocurre a medida que aumenta el tamaño de la muestra, con probabilidad creciente. El Sesgo de
 variable omitida es un problema tanto si el tamaño de la muestra es grande como si es pequeño. Debido
@@ -1711,7 +1715,7 @@ $$Y+\Delta Y=\beta_0+\beta_1(X_1+\Delta X_1)+\beta_2X_2$$
 
 Se obtiene una ecuación para $\Delta Y$ en términos de $\Delta X_1$ restando la ecuación $Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2$
 la anterior Ecuación, por lo que se obtiene $\Delta Y = \beta_1 \Delta X_1$. Es decir:
-$$Expresion \quad \beta_1= \frac{ \Delta Y}{ \Delta X_1} \quad manteniendo X_2 \quad constante$$
+$$Expresion \quad \beta_1= \frac{ \Delta Y}{ \Delta X_1} \quad manteniendo \quad X_2 \quad constante$$
 
 El coeficiente $\beta_1$ es el efecto sobre $Y$ (la esperanza de la variación de $Y_{1i}$) de un cambio unitario en
 $X_{1i}$, manteniendo fija $X_{2i}$. Describir $\beta_1$ es el efecto parcial sobre $Y$ de $X_{1i}$, manteniendo constante $X_{2i}$.
@@ -1743,7 +1747,7 @@ Para estimar los coeficientes del MCO para regresión múltiple puede calcularse
 para regresión simple. La suma de los cuadrados de los errores de predicción para las n observaciones es:
 $$\sum_{i=1}^n(Y_i-b_0-b_1X_{1i}-\cdots-b_kX_{ki})^2$$
 
-Los coeficientes que minimizan esto son los estimadores de mínimos cuadrados de b0, b1, . . . , bk. Las
+Los coeficientes que minimizan esto son los estimadores de mínimos cuadrados de $b_0, b_1, . . . , b_k$. Las
 fórmulas para estos regresores se obtienen igual que antes, aunque resulta más simple expresarlas y
 analizarlas mediante notación matricial.
 
@@ -1757,7 +1761,7 @@ datos.
 \paragraph{El error estándar de la regresión (ESR)} estima la desviación típica del término de error $u_i$. Por tanto,
 el ESR es una medida de la dispersión de la distribución de Y alrededor de la recta de regresión. En
 regresión múltiple, el ESR es:
-$$ESR = \sqrt{\frac{1}{n-k-1}\sum_{i=1}^n \hat{u}_i^2}=\sqrt{s_u^2}=\frac{SR}{n-k-1}$$
+$$ ESR=s_{\hat{u}}\quad \text{donde}\quad s_{\hat{u}}^2=\frac{1}{n-k-1} \sum_{i=1}^n \hat{u}_i^2=\frac{S R}{n-k-1}$$
 
 Donde $SR$ es la suma de los residuos al cuadrado, $k$ es el número de regresores independientes
 (excluyendo el término independiente) y $n$ es el tamaño de la muestra. La única diferencia con este nuevo ESR es que se divide
@@ -1833,8 +1837,8 @@ los estimadores MCO $\hat{\beta}_0, \hat{\beta}_1, \dots, \hat{\beta}_k$ están 
 distribuye $N( \beta_j , \sigma^2_{\hat{\beta}_j}), j = 0, . . . , k$
 
 En regresión lineal con único regresor, con muestras grandes, los estimadores se aproximan a una
-distribución normal bivariante. Para el análisis de regresión múltiple, esto se hace extensible para la dis-
-tribución normal multivariante. El teorema central del límite se aplica del mismo modo, los estimadores
+distribución normal bivariante. Para el análisis de regresión múltiple, esto se hace extensible para la distribución 
+normal multivariante. El teorema central del límite se aplica del mismo modo, los estimadores
 son promedios de una muestra aleatoria, y si esta es suficientemente grande, la distribución muestral de
 esos promedios se convierte en normal.
 
@@ -1847,8 +1851,8 @@ una variable, que se considere como variable binaria a cada subcategoría de una
 Para evitar la trampa de la variable ficticia, se debe eliminar una de las variables ficticias
 de cada conjunto de variables ficticias que representen una variable categórica.
 
-La multicolinealidad imperfecta implica que dos o más de los regresores están altamente correlaciona-
-dos. Esto no resulta un problema para la teoría de los MCO. Si los regresores presentan multicolinealidad
+La multicolinealidad imperfecta implica que dos o más de los regresores están altamente correlacionados. 
+Esto no resulta un problema para la teoría de los MCO. Si los regresores presentan multicolinealidad
 imperfecta, entonces los coeficientes de al menos un regresor individual se estimarán de forma imprecisa.
 Estos seguiran siendo insesgados y consistentes, pero sus varianzas serán elevadas. En consecuencia, los errores estándar
 serán grandes, y los intervalos de confianza para los coeficientes serán amplios. A diferencia de la multicolinealidad perfecta, 
@@ -1856,7 +1860,16 @@ la multicolinealidad imperfecta no impide la estimación de la regresión, ni im
 
 \section{Apéndice}
 
-\subsection*{Distribución de los estimadores MCO en presencia de dos regresores y errores homocedásticos}
+\subsection*{Apéndice 6.1: Obtención de la ecuación 6.1 (\ref{eq:6.1})}
+
+Se parte de la ecuación:
+$$\hat{\beta}_1=\beta_1+\frac{\frac{1}{n} \sum_{i=1}^n\left(X_i-\bar{X}\right) u_i}{\frac{1}{n} \sum_{i=1}^n\left(X_i-\bar{X}\right)^2}$$
+
+Bajo los 2 últimos supuestos del concepto clave 4.3 (\ref{cc:4.3}). $(1/n)\sum_{i=1}^{n} (X_i-\bar{X})^2 \xrightarrow{p} \sigma_X^2$, 
+y $(1/n)\sum_{i=1}^{n}(X_i-\bar{X})u_i \xrightarrow{p} cov(u_i,X_i)=\rho_{Xu}\sigma_u\sigma_X$. Mediante la sustitución de estos límites en la Ecuación 
+recién presentada se llega a la ecuación 6.1 (\ref{eq:6.1}).   
+
+\subsection*{Apéndice 6.2: Distribución de los estimadores MCO en presencia de dos regresores y errores homocedásticos}
 
 Aunque la fórmula general para la varianza de los estimadores MCO en regresión múltiple es complicada,
 con dos variables explicativas (k = 2) y si los errores son homocedásticos, entonces la fórmula se simplifica
@@ -1889,7 +1902,7 @@ es $\hat{\beta}_1$ y $\hat{\beta}_2$ están en general correlacionados. Cuando l
 los estimadores MCO $\hat{\beta}_1$ y $\hat{\beta}_2$ es el opuesto (cambia de signo) de la correlación entre los dos regresores:
 $$\mathrm{corr}(\hat{\beta}_1,\hat{\beta}_2)=-\rho_{X_1,X_2}$$
 
-\subsection*{El teorema de Frisch-Waugh}
+\subsection*{Apéndice 6.3: El teorema de Frisch-Waugh}
 
 El estimador MCO en regresión múltiple se puede calcular mediante una serie de regresiones más cortas.
 Consideremos el modelo de regresión múltiple con k regresores. El estimador MCO de $\beta_1$ se puede
