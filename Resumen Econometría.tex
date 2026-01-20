@@ -3874,8 +3874,7 @@ que no está correlacionada con u.
     \item \textbf{Exogeneidad:} No estan correlacionadas con el término de error poblacional, $corr(X, u) = 0$.
 \end{itemize}
 
-\paragraph{Condiciones para un intrumento válido:} na variable instrumental válida debe cumplir dos condi-
-ciones:
+\paragraph{Condiciones para un intrumento válido:} Una variable instrumental válida debe cumplir dos condiciones:
 
 \begin{itemize}
     \item \textbf{Relevancia del intrumento:} $corr(Z, X) \neq 0$.
@@ -3988,7 +3987,7 @@ y su terminología}
     \end{enumerate}
 \end{conceptoclave}
 
-Los coeficientes deben estar o bien exactamente identificados o bien sobreidentificados para ser estimados
+Los coeficientes deben estar exactamente identificados o sobreidentificados para ser estimados
 mediante la regresión VI. Las variables W en la Ecuación (\ref{eq:12.12}) pueden ser:
 \begin{itemize}
     \item \textbf{Variables exógenas}
@@ -4041,7 +4040,7 @@ lugar a valores de predicción para cada uno de los regresores endógenos. En la
 se estima MCO sustityuendo X por sus estimados predictivos $\hat{X}$. El estimador resultante de 
 $\beta_0, \dots, \beta_{k+r}$ es el estimador MC2E.
 
-\paragraph{Relevancia y Exogeneidad de los Instrumentos} as condiciones de relevancia y exogeneidad de
+\paragraph{Relevancia y Exogeneidad de los Instrumentos} Las condiciones de relevancia y exogeneidad de
 instrumentos necesitan ser modificadas para el modelo de regresión VI general.
 \begin{itemize}
     \item \textbf{Relevancia:}Cuando existe una única variable endógena incluida pero varios instrumentos, la
@@ -4063,7 +4062,7 @@ para ser válido:
             \item En general, sea $\hat{X}^*_{1i}$ el valor de predicción de $X_{1i}$ a partir de la regresión poblacional de
 $X_{1i}$ sobre los instrumentos (Z) y los regresores exógenos incluidos (W), y sea «1» la
 expresión del regresor constante que toma el valor 1 para todas las observaciones. Entonces 
-($\hat{X}^*_{1i} , ..., hat{X}^*_{ki}, W_{1i}, W_{ri}, 1$) no son perfectamente multicolineales.
+($\hat{X}^*_{1i} , ..., \hat{X}^*_{ki}, W_{1i}, W_{ri}, 1$) no son perfectamente multicolineales.
             \item Si solo hay una X, entonces para que se cumpla la condición anterior, al menos una Z
 debe tener un coeficiente distinto de cero en la regresión poblacional de X sobre las Z
 y las W.
@@ -4151,8 +4150,8 @@ son iguales a cero en la regresión de la primera etapa de MC2E. Este estadísti
 etapa proporciona una medida del contenido de la información incluida en los instrumentos: cuanta más
 información contengan, mayor es el valor esperado del estadístico F.
 
-Una regla práctica sencilla es que no es necesario preocuparse de los instrumentos débiles si el es-
-tadístico F de la primera etapa es mayor que 10. (Para más detalles, véase el Apéndice 12.5). Esto se
+Una regla práctica sencilla es que no es necesario preocuparse de los instrumentos débiles si el 
+estadístico F de la primera etapa es mayor que 10. (Para más detalles, véase el Apéndice 12.5). Esto se
 resume en el Concepto clave 12.5.
 
 \begin{conceptoclave}
@@ -4173,22 +4172,22 @@ de los más relevantes para el análisis MC2E. Los errores estándar MC2E podrí
 quitan los instrumentos débiles, pero es necesario tener en cuenta que los errores estándar originales no
 eran significativos.
 
-Sin embargo, si los coeficientes están exactamente identificados, no se pueden descartar los instrumen-
-tos débiles. Aun cuando los coeficientes estén sobreidentificados, puede que no se disponga de suficientes
+Sin embargo, si los coeficientes están exactamente identificados, no se pueden descartar los instrumentos 
+débiles. Aun cuando los coeficientes estén sobreidentificados, puede que no se disponga de suficientes
 instrumentos fuertes para lograr la identificación, por lo que desechar algunos instrumentos débiles no
 ayudará. En este caso, existen dos opciones:
 \begin{enumerate}
-    \item \textbf{Encontrar instrumentos adicionales, fuertes:} sto requiere un conocimiento profundo del
+    \item \textbf{Encontrar instrumentos adicionales, fuertes:} Esto requiere un conocimiento profundo del
 problema en cuestión y puede implicar el rediseño del conjunto de datos y de la naturaleza del
 estudio empírico.
-    \item \textbf{Continuar el análisis empírico con los instrumentos débiles:} mpleando métodos distintos
+    \item \textbf{Continuar el análisis empírico con los instrumentos débiles:} Empleando métodos distintos
 de MC2E. Algunos otros métodos de análisis de variables instrumentales son menos sensibles a los
 instrumentos débiles que MC2E, y algunos de estos métodos se tratan en el Apéndice 12.5. 
 \end{enumerate}
 
 \subsection*{Supuestos}
 \begin{enumerate}
-    \item \textbf{Relevancia de los instrumentos} l papel de la condición de relevancia de los instrumentos en
+    \item \textbf{Relevancia de los instrumentos} El papel de la condición de relevancia de los instrumentos en
     la regresión VI es sutil. Una forma de entender la relevancia de los instrumentos es compararla
     con el tamaño de la muestra: cuanto más relevantes sean los instrumentos —es decir, cuanta más
     variación de X se explique por medio de los instrumentos— más información está disponible para
@@ -4197,7 +4196,7 @@ instrumentos débiles que MC2E, y algunos de estos métodos se tratan en el Apé
 
     Por otra parte,la \textbf{inferencia estadística mediante MC2E} se basa en que el estimador MC2E
     tenga una distribución muestral normal. De acuerdo con el teorema central del límite, la 
-    distribución normal es una buena aproximación para uestras grandes, pero no necesariamente para
+    distribución normal es una buena aproximación para muestras grandes, pero no necesariamente para
     muestras pequeñas. Si disponer de una mayor relevancia de los instrumentos es como disponer de
     un tamaño de muestra mayor, esto sugiere que cuanto más relevante sea el instrumento, mejor es
     la aproximación normal para la distribución muestral del estimador MC2E y su estadístico t.
@@ -4219,8 +4218,8 @@ exógenos cuando los coeficientes están exactamente identificados. No se puede 
 empírica para resolver si estos instrumentos satisfacen el requisito de exogeneidad. En este caso,
 la única forma de evaluar si los instrumentos son exógenos es recurrir a una opinión experta y al
 conocimiento personal de los problemas empíricos que se están analizando.
-    \item \textbf{Sobreidentificados:} Si los coeficientes están sobreidentificados, es posible contrastar la sobrei-
-dentificación de las restricciones, es decir, contrastar la hipótesis de que los instrumentos extras son
+    \item \textbf{Sobreidentificados:} Si los coeficientes están sobreidentificados, es posible contrastar la 
+    sobreidentificación de las restricciones, es decir, contrastar la hipótesis de que los instrumentos extras son
 exógenos bajo el cumplimiento del supuesto de que existen suficientes instrumentos válidos para
 identificar los coeficientes de interés.
 \end{itemize}
@@ -4232,8 +4231,8 @@ por debajo de la media posiblemente desplazarían la curva de oferta de la mante
 desplazarían directamente la curva de demanda. (Si hay más instrumentos que regresores endógenos,
 puede ser útil en este proceso el conocido como contraste de sobreidentificación de restricciones).
 
-\paragraph{Contraste de Sobreidentificación de Restricciones} Supongamos que se dispone de un único re-
-gresor endógeno y de dos instrumentos. Se pueden calcular dos estimadores MC2E diferentes: uno que
+\paragraph{Contraste de Sobreidentificación de Restricciones} Supongamos que se dispone de un único 
+regresor endógeno y de dos instrumentos. Se pueden calcular dos estimadores MC2E diferentes: uno que
 utilice el primer instrumento y otro que utilice el segundo. Estos dos estimadores no serán iguales debido
 a la variación muestral, pero si ambos instrumentos son exógenos, tenderán a estar cerca uno del otro. Si
 estos dos instrumentos dan lugar a estimaciones muy diferentes, se puede concluir que hay algo incorrecto
@@ -4268,8 +4267,8 @@ se ofrece en la Sección 18.7.
     válido con homocedasticidad para el contraste de la hipótesis de que $\delta_1=\dots =\delta_n=0$. El
     estadístico para el contraste de sobreidentificación de restricciones es $J=mF$. Bajo la
     hipótesis nula de que todos los instrumentos son exógenos, si $e_i$ es homocedástico, en
-    muestras grandes J se distribuye $\chi^2_{m-k}$, donde $m-k$ es el «grado de sobreidentifica-
-    ción», es decir, el número de instrumentos menos el número de regresores endógenos.
+    muestras grandes J se distribuye $\chi^2_{m-k}$, donde $m-k$ es el «grado de sobreidentificación»
+    , es decir, el número de instrumentos menos el número de regresores endógenos.
 \end{conceptoclave}
 
 Para comprobar que no se puede contrastar la exogeneidad de los regresores cuando los coeficientes
@@ -4277,7 +4276,7 @@ están exactamente identificados ($m = k$), consideremos el caso de una sola var
 ($k = 1$). Si hay dos instrumentos, se pueden calcular dos estimadores MC2E, uno por cada instrumento,
 y compararlos. Pero si solo se dispone de un instrumento, se puede calcular un solo estimador MC2E y
 no se dispone de otro con el que compararlo. Si los coeficientes están exactamente identificados ($m = k$),
-el estadístico J de contraste de sobreidentificación es exactamente igual a cero (seríaN una $\chi^2_{m-k=0}$).
+el estadístico J de contraste de sobreidentificación es exactamente igual a cero (sería una $\chi^2_{m-k=0}$).
 
 \section{¿De donde provienen los instrumentos válidos}
 
