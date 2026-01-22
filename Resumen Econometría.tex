@@ -4437,9 +4437,9 @@ una interpretación causal.
 
 \subsection*{Estimación de efectos causales que dependen de variables observables}
 
-Como se discutió en el Capítulo 8, la variación en los efectos causales que dependen de variables observ-
-ables puede estimarse incluyendo funciones no lineales apropiadas o interacciones con $X_i$. Por ejemplo,
-si $W{1i}$ es un indicador binario que representa el género, los efectos causales diferentes para hombres y
+Como se discutió en el Capítulo 8, la variación en los efectos causales que dependen de variables observables 
+puede estimarse incluyendo funciones no lineales apropiadas o interacciones con $X_i$. Por ejemplo,
+si $W_{1i}$ es un indicador binario que representa el género, los efectos causales diferentes para hombres y
 mujeres pueden estimarse mediante la inclusión de la variable de interacción $W_{1i} \times X_i$ en la regresión de
 la ecuación anterior.
 
@@ -4475,8 +4475,8 @@ de los análisis estadísticos de los experimentos con seres humanos.
 \subsection*{Amenazas a la validez interna}
 
 Las principales amenazas a la validez interna en experimentos aleatorizados controlados incluyen la
-ausencia de aleatoriedad, el incumplimiento del protocolo de tratamiento, la deserción, los efectos exper-
-imentales y los tamaños muestrales pequeños.
+ausencia de aleatoriedad, el incumplimiento del protocolo de tratamiento, la deserción, los efectos experimentales 
+y los tamaños muestrales pequeños.
 
 \begin{enumerate}
     \item \textbf{Ausencia de aleatoriedad:}Si el tratamiento no se asigna al azar y depende de las características o preferencias del sujeto, los
@@ -4492,32 +4492,32 @@ tratamiento recibido como del asignado, se puede utilizar una estrategia de vari
 para estimar el efecto del tratamiento.
     \item \textbf{Deserción o abandono:}La deserción ocurre cuando sujetos asignados aleatoriamente al grupo de tratamiento o control
 abandonan el estudio. Si la deserción está relacionada con el tratamiento, introduce un sesgo en
-el estimador MCO debido a la correlación entre $X_i$ y ui para los que permanecen en la muestra.
+el estimador MCO debido a la correlación entre $X_i$ y $u_i$ para los que permanecen en la muestra.
 Esto conduce a un sesgo de selección.
     \item \textbf{Efectos experimentales:}En experimentos con seres humanos, el comportamiento de los sujetos puede cambiar simplemente
 por saber que están en un experimento, conocido como el \textbf{efecto Hawthorne}. Un protocolo de
 doble ciego puede mitigar este efecto, pero es inviable en experimentos económicos donde tanto los
 sujetos como los instructores saben quién está en el grupo de tratamiento.
-    \item \textbf{Muestras pequeñas:}Un tamaño de muestra pequeño no sesga los estimadores, pero puede llevar a estimaciones impre-
-cisas del efecto causal. También plantea problemas para la validez de los intervalos de confianza y
+    \item \textbf{Muestras pequeñas:}Un tamaño de muestra pequeño no sesga los estimadores, pero puede llevar a estimaciones imprecisas 
+    del efecto causal. También plantea problemas para la validez de los intervalos de confianza y
 los contrastes de hipótesis, especialmente si los errores no siguen una distribución normal.
 \end{enumerate}
 
 \subsection*{Amenazas a la validez externa}
 
-Las amenazas a la validez externa comprometen la capacidad de generalizar los resultados a otras pobla-
-ciones y escenarios. Las principales amenazas incluyen:
+Las amenazas a la validez externa comprometen la capacidad de generalizar los resultados a otras poblaciones 
+y escenarios. Las principales amenazas incluyen:
 \begin{enumerate}
     \item \textbf{Muestra no representativa:} Si la población estudiada no es representativa de la población de
 interés, los resultados del estudio podrían no ser generalizables. Por ejemplo, un programa evaluado
 con exreclusos podría no ser generalizable a trabajadores que nunca han cometido un delito.
-    \item \textbf{Programa o política no representativa:}La política o programa de interés debe ser sufi-
-cientemente similar al programa estudiado para permitir la generalización de los resultados. La
+    \item \textbf{Programa o política no representativa:}La política o programa de interés debe ser suficientemente 
+    similar al programa estudiado para permitir la generalización de los resultados. La
 implementación a gran escala de un programa experimental podría no reflejar los mismos resultados
 debido a diferencias en control de calidad, financiación o duración.
     \item \textbf{Efectos de equilibrio general:}Ampliar un programa experimental pequeño a gran escala puede
-cambiar el entorno económico, afectando la generalización de los resultados. Por ejemplo, un pro-
-grama de formación laboral podría complementar la capacitación proporcionada por empleadores
+cambiar el entorno económico, afectando la generalización de los resultados. Por ejemplo, un programa 
+de formación laboral podría complementar la capacitación proporcionada por empleadores
 a pequeña escala, pero desplazarse a gran escala podría reducir los beneficios netos del programa.
 \end{enumerate}
 
@@ -4607,7 +4607,7 @@ etapas (2SLS, por sus siglas en inglés). La ecuación a estimar es:
 $$ Y_i = \beta_0 + \beta_1 X_i + \beta_2 W_i + u_i $$
 
 Donde: $Y_i$ es la variable dependiente, $X_i$ es el tratamiento, $W_i$ son las varialbes de control, 
-y $u_i$ es el términ de error.
+y $u_i$ es el término de error.
 
 En la primera etapa del 2SLS, se estima $X_i$ como una función de $Z_i$ y $W_i$:
 $$ X_i = \pi_0 + \pi_1 Z_i + \pi_2 W_i + v_i $$
@@ -5500,7 +5500,7 @@ Donde $u_t$ es un término de error que captura la variación no explicada por l
 un ejemplo aplicado a la tasa de inflación trimestral en EE.UU., la ecuación estimada es:
 $$\Delta\mathrm{Inf}_t=0.017-0.238\Delta\mathrm{Inf}_{t-1}$$
 
-Donde $\Delta Inft$ representa la variación en la tasa de inflación del trimestre $t$ respecto al trimestre $t - 1$.
+Donde $\Delta\mathrm{Inf}_t$ representa la variación en la tasa de inflación del trimestre $t$ respecto al trimestre $t - 1$.
 El coeficiente $\beta_1 = -0.238$ indica que un aumento en la inflación en el trimestre anterior está asociado
 con una disminución en la inflación en el trimestre siguiente.
 
@@ -5519,7 +5519,7 @@ estimadores de Mínimos Cuadrados Ordinarios (MCO) $\hat{\beta}_0$ y $\hat{\beta
 para el valor de $Y_{T +1}$ dada la información hasta el periodo T se expresa como:
 $$\hat{Y}_{T+1|T}=\hat{\beta}_0+\hat{\beta}_1Y_T$$
 
-El error de predicción es la diferencia entre el valor real observado $Y_{T +1}$ y la predicción $\hat{Y}_{T +1}\mid T$:
+El error de predicción es la diferencia entre el valor real observado $Y_{T +1}$ y la predicción $\hat{Y}_{T +1\mid T}$:
 $$\text{Error de predicci\'{o}n}=Y_{T+1}-\hat{Y}_{T+1|T}$$
 
 \paragraph{Raíz del Error Cuadrático Medio de Predicción (RECMP)} La raíz del error cuadrático medio
@@ -5560,22 +5560,28 @@ de la Tasa de Desempleo}
 
 Un valor alto de la tasa de desempleo suele estar asociado con una futura disminución de la tasa de
 inflación, lo que se conoce como la curva de Phillips de corto plazo. Por ejemplo, en 1982 la tasa
-de desempleo promedió un 9.7\%, mientras que la tasa de inflación cayó al 2.9% al año siguiente. La
+de desempleo promedió un 9.7\%, mientras que la tasa de inflación cayó al 2.9\% al año siguiente. La
 correlación observada es 0.36.
 
 Para evaluar si los valores pasados de la tasa de desempleo aportan información adicional sobre la
 inflación futura, se amplía el modelo AR(4) de la Ecuación (14.13) para incluir el primer retardo de la
 tasa de desempleo:
-$$\Delta\mathrm{Inf}_t=1.28-0.31\Delta\mathrm{Inf}_{t-1}-0.39\Delta\mathrm{Inf}_{t-2}-0.09\Delta\mathrm{Inf}_{t-3}-0.08\Delta\mathrm{Inf}_{t-4}-0.21\mathrm{Desemp}_{t-1}$$
+\begin{equation}
+\Delta\mathrm{Inf}_t=1.28-0.31\Delta\mathrm{Inf}_{t-1}-0.39\Delta\mathrm{Inf}_{t-2}-0.09\Delta\mathrm{Inf}_{t-3}-0.08\Delta\mathrm{Inf}_{t-4}-0.21\mathrm{Desemp}_{t-1}
+\label{eq:14.16}
+\end{equation}
 
-Donde el estadístico t para la variable $Desemp(t-1)$ es -2.23, lo que indica significancia al nivel del
+Donde el estadístico t para la variable $\mathrm{Desemp}_{t-1}$ es -2.23, lo que indica significancia al nivel del
 5\%. El $R^2$ de este modelo es 0.21, mejorando el $R^2$ del modelo AR(4) de 0.18.
 
 Incorporando tres retardos adicionales de la tasa de desempleo, el modelo se expande a:
-\begin{align}
+\begin{equation}
+\begin{split}
 \Delta\text{Inf}_{t}= & 1.30- 0.42\Delta\text{Inf}_{t-1} - 0.37\Delta\text{Inf}_{t-2} - 0.06\Delta\text{Inf}_{t-3} - 0.04\Delta\text{Inf}_{t-4} \\
  & -2.64\text{Desemp}_{t-1}-3.04\text{Desemp}_{t-2}+0.38\text{Desemp}_{t-3}-0.25\text{Desemp}_{t-4}
-\end{align}
+\label{eq:14.17}
+\end{split}
+\end{equation}
 
 El estadístico F para los retardos de la tasa de desempleo es 10.76 (p-valor < 0.001), indicando
 significancia conjunta. El $R^2$ es 0.34, mejorando significativamente respecto al modelo anterior, y el
@@ -5585,17 +5591,17 @@ error estándar de la regresión es 1.36, comparado con 1.52 en el modelo AR(4).
 
 Los modelos ARD combinan retardos de la variable dependiente con retardos distribuidos de un predictor
 adicional. Un modelo ARD(p, q) incluye p retardos de la variable dependiente y q retardos de un predictor
-adicional. Los modelos ARD de las Ecuaciones (14.16) y (14.17) se denominan ARD(4,1) y ARD(4,4)
+adicional. Los modelos ARD de las Ecuaciones (\ref{eq:14.16}) y (\ref{eq:14.17}) se denominan ARD(4,1) y ARD(4,4)
 respectivamente.
 
 \begin{conceptoclave}
     {Concepto clave 14.4: El modelo autorregresivo de retardos distribuidos}
-    El modelo autorregresivo de retardos distribuidos con p retardos de Yt y q retardos de Xt,
+    El modelo autorregresivo de retardos distribuidos con p retardos de $Y_t$ y q retardos de $X_t$,
     denominado ARD(p, q), es
-    \begin{align}
+    \begin{align*}
     Y_{t}= & \beta_{0}+\beta_{1}Y_{t-1}+\beta_{2}Y_{t-2}+\cdots+\beta_{p}Y_{t-p} \\
     + & \delta_1X_{t-1}+\delta_2X_{t-2}+\cdots+\delta_qX_{t-q}+u_t,
-    \end{align}
+    \end{align*}
 
     donde $\beta_0 , \beta_1, ..., \beta_p, \delta_1 , ..., \delta_q$ son coeficientes desconocidos y $u_t$ es el término de error
     con $E(u_t \mid Y_{t-1} , Y_{t-2}, ..., X_{t-1} , X_{t-2} , ...) = 0$.
@@ -5635,12 +5641,14 @@ donde $X_{t-i}$ son los predictores y $Z_{t-j}$ son sus retardos. Los supuestos 
     El modelo general de regresión de series temporales permite $k$ predictores adicionales,
     en el que se incluyen $q_1$ retardos del primer predictor, $q_2$ retardos del segundo predictor,
     y así sucesivamente:
-    \begin{align}
-    Y_{t} & =\beta_0 + \beta_1 Y_{t-1} + \beta_2 Y_{t-2} + \cdots + \beta_p Y_{t-p} \\
-    & +\delta_{11}X_{1t-1}+\delta_{12}X_{1t-2}+\cdots+\delta_{1q_1}X_{1t-q_1} \\
-    & +\cdots+\delta_{k1}X_{kt-1}+\delta_{k2}X_{kt-2}+\cdots+\delta_{kq_k}X_{kt-q_k}+u_t
+    \begin{equation}
+    \begin{split}
+        Y_{t} & =\beta_0 + \beta_1 Y_{t-1} + \beta_2 Y_{t-2} + \cdots + \beta_p Y_{t-p} \\
+        & +\delta_{11}X_{1t-1}+\delta_{12}X_{1t-2}+\cdots+\delta_{1q_1}X_{1t-q_1} \\
+        & +\cdots+\delta_{k1}X_{kt-1}+\delta_{k2}X_{kt-2}+\cdots+\delta_{kq_k}X_{kt-q_k}+u_t
+    \end{split}
     \label{eq:14.20}
-    \end{align} 
+    \end{equation}
 
     Donde:
     \begin{enumerate}
@@ -5652,6 +5660,7 @@ donde $X_{t-i}$ son los predictores y $Z_{t-j}$ son sus retardos. Los supuestos 
         momentos de cuarto orden finitos y distintos de cero. 
         \item No existe multicolinealidad perfecta.
     \end{enumerate}
+    \label{cc:14.6}
 \end{conceptoclave}
 
 \subsection*{Inferencia Estadística y Causalidad de Granger}
@@ -5716,8 +5725,8 @@ por agregar retardos.
 
 \section{Ausencia de estacionariedad I: Tendencias}
 
-En el concepto clave 14.6, se asumió que tanto la variable dependiente como los regresores eran esta-
-cionarios. Sin embargo, si estas variables no son estacionarias, los contrastes de hipótesis, los intervalos de
+En el concepto clave 14.6 (\ref{cc:14.6}), se asumió que tanto la variable dependiente como los regresores eran estacionarios. 
+Sin embargo, si estas variables no son estacionarias, los contrastes de hipótesis, los intervalos de
 confianza y las predicciones pueden ser poco fiables. En esta sección y la siguiente, se examinan dos tipos
 importantes de ausencia de estacionariedad en datos de series temporales económicas: las tendencias y
 los cambios estructurales.
@@ -5767,10 +5776,10 @@ Si una raíz es igual a 1, la serie tiene una raíz unitaria y es no estacionari
 
 \subsection*{Problemas con las Tendencias Estocásticas}
 \begin{itemize}
-    \item \textbf{Sesgo hacia cero en coeficientes autorregresivos:} El estimador MCO del coeficiente autor-
-regresivo en un modelo AR(1) está sesgado hacia cero si el verdadero valor es 1.
-    \item \textbf{Distribuciones no normales del estadístico t:} El estadístico t MCO puede tener una distribu-
-ción distinta de la normal, afectando la validez de los intervalos de confianza y los contrastes de
+    \item \textbf{Sesgo hacia cero en coeficientes autorregresivos:} El estimador MCO del coeficiente autorregresivo 
+    en un modelo AR(1) está sesgado hacia cero si el verdadero valor es 1.
+    \item \textbf{Distribuciones no normales del estadístico t:} El estadístico t MCO puede tener una distribución 
+    distinta de la normal, afectando la validez de los intervalos de confianza y los contrastes de
 hipótesis.
     \item \textbf{Regresión espuria:} Dos series con tendencias estocásticas pueden parecer relacionadas cuando
 en realidad no lo están, lo que lleva a regresiones espurias.
@@ -5808,7 +5817,7 @@ AR(p) y puede ser estimada mediante criterios de información.
         \label{eq:14.33}
     \end{equation}
 
-    Donde a es un coeficiente desconocido y el estadístico ADF es el estadístico t MCO para
+    Donde $\alpha$ es un coeficiente desconocido y el estadístico ADF es el estadístico t MCO para
     contrastar $\delta = 0$ en la Ecuación (\ref{eq:14.33}).
 
     La longitud del retardo, p, se puede estimar utilizando el criterio BIC o AIC. Cuando
