@@ -5983,6 +5983,11 @@ Donde:
     \item $\epsilon_t$ es el error del modelo.
 \end{itemize}
 
+\begin{align*}
+\widehat{\% V P_t}=&-0,40+0,47 I H_t \\
+&\quad(0,22) \quad(0,13)
+\end{align*}
+
 Los resultados de la regresión muestran que un aumento unitario en el índice de heladas (IHt)
 incrementa la variación porcentual del precio del concentrado de jugo de naranja en un 0.47\% . Esto
 implica que, en un mes con un índice de heladas de 4, como ocurrió en noviembre de 1950, se estima que
@@ -5993,6 +5998,13 @@ incorporando los valores retardados del índice de heladas en los meses anterior
 regresión de retardos distribuidos, en la que se incluyen las variables $IH_t, IH_{t-1}, IH_{t-2}, ..., IH_{t-6}$,
 correspondientes a los seis meses previos. La fórmula de este modelo es la siguiente:
 $$\%VPt=\beta_0+\beta_1IH_t+\beta_2IH_{t-1}+\beta_3IH_{t-2}+\beta_4IH_{t-3}+\beta_5IH_{t-4}+\beta_6IH_{t-5}+\beta_7IH_{t-6}+\epsilon_t$$
+
+\begin{equation*}
+\begin{gathered}
+\widehat{\% V P_t}=-\underset{(0,23)}{0,65}+\underset{(0,14)}{0,47 I H_t}+\underset{(0,08)}{0,14 I H_{t-1}}+\underset{(0,06)}{0,06 I H_{t-2}} \\
++\underset{(0,05)}{0,07 I H_{t-3}}+\underset{(0,03)}{0,03 I H_{t-4}}+\underset{(0,03)}{0,05 I H_{t-5}}+\underset{(0,04)}{0,05 I H_{t-6}}
+\end{gathered}
+\end{equation*}
 
 En este caso, los coeficientes $\beta_1, \beta_2, ..., \beta_7$ estiman el impacto de las heladas sobre la variación 
 porcentual del precio del concentrado de jugo de naranja en el mes t y en los meses posteriores. Los
@@ -6021,12 +6033,12 @@ mismo sujeto en diferentes momentos desempeña el papel tanto del grupo de trata
 de control). Debido a que los datos se recogen a lo largo del tiempo, es posible estimar el efecto causal
 dinámico, es decir, \textit{la senda temporal de los efectos del tratamiento sobre los resultados de interés}.
 
-\paragraph{Efectos dinámicos y modelo de retardos distribuidos} Debido a que los efectos dinámicos nece-
-sariamente ocurren en el tiempo, resulta necesario que el modelo econométrico utilizado para estimar los
-efectos causales dinámicos incorpore retardos. Para hacerlo, se puede expresar Yt como un modelo de
+\paragraph{Efectos dinámicos y modelo de retardos distribuidos} Debido a que los efectos dinámicos necesariamente 
+ocurren en el tiempo, resulta necesario que el modelo econométrico utilizado para estimar los
+efectos causales dinámicos incorpore retardos. Para hacerlo, se puede expresar $Y_t$ como un modelo de
 retardos distribuidos.
 \begin{equation}
-    Y_t=\beta_0+\beta_1X_t+\beta_2X_{t-1}+\beta_3X_{t-2}+\epsilon_t+\lambda_1X_{t-r}+u_t
+    Y_t=\beta_0+\beta_1X_t+\beta_2X_{t-1}+\beta_3X_{t-2}+\dots+\beta_{r+1}X_{t-r}+u_t
 \label{eq:15.3}
 \end{equation}
 
@@ -6091,8 +6103,7 @@ en los valores futuros de $X_t$, entonces $X_t$ no es estrictamente exógena a p
         \label{eq:15.4}
     \end{equation}
 
-    existen dos tipos diferentes de exogeneidad, es decir, dos condiciones diferentes de exo-
-    geneidad:
+    existen dos tipos diferentes de exogeneidad, es decir, dos condiciones diferentes de exogeneidad:
 
     \indent Exogeneidad pasada y presente (exogeneidad):
     $$E(u_t|X_t,X_{t-1},X_{t-2},...)=0;$$
@@ -6100,8 +6111,7 @@ en los valores futuros de $X_t$, entonces $X_t$ no es estrictamente exógena a p
     \indent Exogeneidad pasada, presente y futura (exogeneidad estricta):
     $$E(u_t|...,X_{t+2},X_{t+1},X_t,X_{t-1},X_{t-2},...)=0$$
 
-    Si X es estrictamente exógena, es exógena, pero la exogeneidad no implica la exogenei-
-    dad estricta.
+    Si X es estrictamente exógena, es exógena, pero la exogeneidad no implica la exogeneidad estricta.
 \end{conceptoclave}
 
 \section{Estimación de efectos causales dinámicos con regresores exógenos}
@@ -6137,6 +6147,7 @@ más fuerte es el que se utiliza en secciones anteriores tras el estimador de la
         momentos finitos distintos de cero. 
         \item No existe multicolinealidad perfecta.
     \end{enumerate}
+    \label{cc:15.2}
 \end{conceptoclave}
 
 \subsection*{$u_t$ autocorrelacionados, errores estándar e inferencia}
@@ -6144,7 +6155,7 @@ más fuerte es el que se utiliza en secciones anteriores tras el estimador de la
 En el modelo de regresión de retardos distribuidos, el término de error $u_t$ puede estar autocorrelacionado
 debido a factores omitidos. Si estos factores están correlacionados serialmente, $u_t$ también lo estará.
 
-La autocorrelación en ut no afecta la consistencia de MCO ni introduce sesgo, pero los errores estándar
+La autocorrelación en $u_t$ no afecta la consistencia de MCO ni introduce sesgo, pero los errores estándar
 MCO serán inconsistentes. Esto es similar a la heterocedasticidad: utilizar errores estándar válidos para
 homocedasticidad en presencia de heterocedasticidad produce inferencias engañosas. La solución es usar
 errores estándar consistentes a heterocedasticidad y autocorrelación (HAC).
@@ -6180,7 +6191,7 @@ Esta sección analiza los errores estándar HAC de la regresión con datos de se
 
 Por simplicidad, se considera el estimador MCO $\hat{\beta}_1$ del modelo de regresión de retardos distribuidos
 sin retardos, es decir, el modelo de regresión lineal con un único regresor $X_t$ en el que se cumplen los
-supuestos del Concepto clave 15.2-
+supuestos del Concepto clave 15.2(\ref{cc:15.2}).
 \begin{align*}
     Y_t &=\beta_0+\beta_1X_t+u_t \\
     \hat{\beta}_1 &=\beta_1+\frac{\frac{1}{T}\sum_{t=1}^T(X_t-\bar{X})u_t}{\frac{1}{T}\sum_{t=1}^T(X_t-\bar{X})^2}
@@ -6195,11 +6206,11 @@ Donde: $v_i=(X_i - \mu_X)u_i$ y $\bar{v}=\frac{1}{T}\sum_{i=1}^T v_i$.
 La varianza de $\hat{\beta}_1$ se expresa como:
 $$\mathrm{var}(\widehat{\beta}_1)=\mathrm{var}\left(\frac{\bar{v}}{\sigma_X^2}\right)=\frac{\mathrm{var}(\bar{v})}{\left(\sigma_X^2\right)^2}$$
 
-Si $v_t$ es i.i.d. entonces $var(\hat{v})=var(v_t)/T$ y es aplicable la fórmula de $\hat{\beta}_1$ del concepto clave 4.4
+Si $v_t$ es i.i.d. entonces $var(\bar{v})=var(v_t)/T$ y es aplicable la fórmula de $\hat{\beta}_1$ del concepto clave 4.4
 , sin embargo, si $u_t$ y $X_t$ no estan distribuidas de forma independiente a lo largo del tiempo, $v_t$ estará serialmente correlacionada 
-y $var(\hat{v})\neq var(v_t)/T$, en ese caso la varianza de $\hat{v}$ es:
+y $var(\bar{v})\neq var(v_t)/T$, en ese caso la varianza de $\bar{v}$ es:
 \begin{align*}
-\operatorname{var}(v) & =\mathrm{var}[(v_{1}+v_{2}+\cdots+v_{T})/T] \\
+    \mathrm{var}(\bar{v}) & =\mathrm{var}[(v_{1}+v_{2}+\cdots+v_{T})/T] \\
  & =[\mathrm{var}(v_1)+\mathrm{cov}(v_1,v_2)+\cdots+\mathrm{cov}(v_1,v_T) \\
  & +\operatorname{cov}(v_2,v_1)+\operatorname{var}(v_2)+\cdots+\operatorname{var}(v_T)]/T^2 \\
  & =[T\operatorname{var}(v_t)+2(T-1)\operatorname{cov}(v_t,v_{t-1}) \\
@@ -6391,8 +6402,8 @@ Ecuación (\ref{eq:15.23}) se cumplen si $X_t$ es estrictamente exógena, pero n
 
 \subsection*{Estimación MCO del modelo ARD}
 
-La primera estrategia para estimar los multiplicadores dinámicos consiste en utilizar MCO para los coe-
-ficientes del modelo ARD de la Ecuación (\ref{eq:15.21}). La deducción que conduce a dicha ecuación demuestra
+La primera estrategia para estimar los multiplicadores dinámicos consiste en utilizar MCO para los coeficientes 
+del modelo ARD de la Ecuación (\ref{eq:15.21}). La deducción que conduce a dicha ecuación demuestra
 que la inclusión del retardo de $Y_t$ y un retardo adicional de $X_t$ como regresores hace que el término de
 error esté serialmente incorrelacionado, bajo el supuesto de que el error sigue un proceso autorregresivo
 de primer orden. Por lo tanto, no es necesario usar errores estándar HAC; se pueden emplear los errores
@@ -6422,7 +6433,7 @@ distintos de cero.
 
 \subsection*{Estimación MCG}
 
-La segunda estrategia para estimar los multiplicadores dinámicos cuando Xt es estrictamente exógena
+La segunda estrategia para estimar los multiplicadores dinámicos cuando $X_t$ es estrictamente exógena
 consiste en utilizar mínimos cuadrados generalizados (MCG), lo que implica la estimación de la Ecuación
 (\ref{eq:15.23}).
 
@@ -6436,8 +6447,8 @@ no es factible en la práctica porque $\phi_1$ es desconocido.
 \subsubsection*{MCG Factible}
 El estimador MCG factible utiliza un estimador preliminar de $\phi_1$, denotado como $\tilde{\phi}_1$, para calcular las
 cuasi diferencias. Los estimadores MCG factibles de $b_1$ y $b_2$ son los estimadores MCO de la Ecuación
-(\ref{eq:15.23}), calculados mediante la regresión de $\tilde{Y}_t$ sobre $\tilde{X}_t$ y $\tilde{X}_{t-1}$ (con un término independiente), donde:
-$$\tilde{X}_t=X_t-\hat{\phi}_1X_{t-1}\quad\mathrm{y}\quad\tilde{Y}_t=Y_t-\hat{\phi}_1Y_{t-1}.$$
+(\ref{eq:15.23}), calculados mediante la regresión de $\hat{\tilde{Y}}_t$ sobre $\hat{\tilde{X}}_t$ y $\hat{\tilde{X}}_{t-1}$ (con un término independiente), donde:
+$$\hat{\tilde{X}}_t=X_t-\hat{\phi}_1X_{t-1}\quad\mathrm{y}\quad\hat{\tilde{Y}}_t=Y_t-\hat{\phi}_1Y_{t-1}.$$
 
 El estimador preliminar $\hat{\phi}_1$ se obtiene estimando primero la regresión de retardos distribuidos de la
 Ecuación (\ref{eq:15.18}) por MCO y luego utilizando MCO para estimar $\phi_1$ en la Ecuación (\ref{eq:15.19}) con los
@@ -6535,8 +6546,8 @@ preliminares de $\phi_1, . . . , \phi_p$. El estimador MCG es asintóticamente E
 \subsubsection*{¿MCO o MCG?}
 Ambos métodos tienen ventajas e inconvenientes:
 \begin{itemize}
-    \item \textbf{Ventaja de MCO (ARD):} Proporciona una representación compacta de la distribución de retar-
-dos, reduciendo el número de parámetros a estimar. Esto es útil cuando la distribución de retardos
+    \item \textbf{Ventaja de MCO (ARD):} Proporciona una representación compacta de la distribución de retardos, 
+    reduciendo el número de parámetros a estimar. Esto es útil cuando la distribución de retardos
 es larga y compleja.
     \item \textbf{Ventaja de MCG:} Es más eficiente que MCO para una longitud de retardos dada r, al menos en
 muestras grandes.
