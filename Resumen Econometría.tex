@@ -4711,7 +4711,7 @@ análisis causal, que busca identificar efectos específicos.
 \section{Métodos de predicción}
 
 \paragraph{Mínimos Cuadrados Ordinarios (MCO)} Cuando se cuenta con pocos predictores, el método de
-Mínimos Cuadrados Ordinarios (MCO) suele funcionar bien bajo ciertos supuestos (Apéndice 6.4). Sin
+Mínimos Cuadrados Ordinarios (MCO) suele funcionar bien bajo ciertos supuestos (\ref{cc:6.4}). Sin
 embargo, en presencia de muchos predictores, como en el ejemplo de las 817 características escolares,
 MCO tiende a sobreajustar los datos, resultando en predicciones deficientes fuera de la muestra.
 
@@ -4738,8 +4738,8 @@ aplicaciones modernas de predicción estadística.
 
 \subsection*{Grandes conjuntos de datos en econometría}
 
-Los conjuntos de datos pueden considerarse grandes no solo por el número de observaciones, sino tam-
-bién por la cantidad de predictores, o incluso ambos. Los conjuntos de datos puede no ser estándar,
+Los conjuntos de datos pueden considerarse grandes no solo por el número de observaciones, sino también 
+por la cantidad de predictores, o incluso ambos. Los conjuntos de datos puede no ser estándar,
 conteniendo variables como texto o imágenes, lo cual amplía las aplicaciones posibles.
 
 \paragraph{Predicción con Alta Dimensión} Cuando el número de predictores k es grande en comparación con
@@ -4776,8 +4776,8 @@ estructuras intrínsecas.
 
 \subsection*{Desafíos Computacionales en Big Data}
 
-El manejo de grandes volúmenes de datos presenta varios desafíos computacionales, como el almace-
-namiento y el acceso eficiente a la información. Además, la estimación de modelos complejos requiere
+El manejo de grandes volúmenes de datos presenta varios desafíos computacionales, como el almacenamiento 
+y el acceso eficiente a la información. Además, la estimación de modelos complejos requiere
 algoritmos rápidos y eficientes. Aunque estos aspectos computacionales son fundamentales, no son el
 foco de este capítulo y se abordan en otras disciplinas, como la informática.
 
@@ -4843,7 +4843,7 @@ El \textbf{error cuadrático medio de predicción} (MSPE, por sus siglas en ingl
 cuadrado del error de predicción cuando se emplea el modelo para hacer predicciones para observaciones
 que no están en el conjunto de datos de entrenamiento. Matemáticamente, el MSPE se define como:
 \begin{equation}
-\mathrm{MSPE}=E[(Y_{\mathrm{oos}}-\hat{Y}(X_{\mathrm{oos}}))^2]
+\mathrm{MSPE}=E[Y_{\mathrm{oos}}-\hat{Y}(X_{\mathrm{oos}})]^2
 \label{eq:14.1}
 \end{equation}
 
@@ -4915,19 +4915,19 @@ puede incluir términos no lineales, como cuadrados o interacciones.
 
 \subsection*{El MSPE en el Modelo de Regresión Predictiva Estandarizado}
 
-En el modelo de regresión estandarizado de la Ecuación (14.2), la predicción para el valor fuera de la
+En el modelo de regresión estandarizado de la Ecuación (\ref{eq:14.2}), la predicción para el valor fuera de la
 muestra de los predictores es:
 $$\hat{Y}(X_{\mathrm{oos}})=\hat{\beta}_1X_{\mathrm{oos},1}+\cdots+\hat{\beta}_kX_{\mathrm{oos},k}.$$
 
 El error de predicción es:
 \begin{equation}
-Y_{\cos}-(\hat{\beta}_{1}X_{\cos,1}+\cdots+\hat{\beta}_{k}X_{\cos,k})=u_{\cos}-[(\hat{\beta}_{1}-\beta_{1})X_{\cos,1}+\cdots+(\hat{\beta}_{k}-\beta_{k})X_{\cos,k}]
+Y_{oos}-(\hat{\beta}_{1}X_{oos,1}+\cdots+\hat{\beta}_{k}X_{oos,k})=u_{oos}-[(\hat{\beta}_{1}-\beta_{1})X_{oos,1}+\cdots+(\hat{\beta}_{k}-\beta_{k})X_{oos,k}]
 \label{eq:14.3}
 \end{equation}
 
-Donde la expresión final se obtiene usando la Ecuación (\ref{eq:14.2}) y uoos es el valor del error u para la
-observación fuera de la muestra. Debido a que uoos es independiente de los datos usados para estimar
-los coeficientes y no está correlacionado con Xoos, el MSPE en la Ecuación (\ref{eq:14.1}) para el modelo de
+Donde la expresión final se obtiene usando la Ecuación (\ref{eq:14.2}) y $u_{oos}$ es el valor del error $u$ para la
+observación fuera de la muestra. Debido a que $u_{oos}$ es independiente de los datos usados para estimar
+los coeficientes y no está correlacionado con $X_{oos}$, el MSPE en la Ecuación (\ref{eq:14.1}) para el modelo de
 regresión predictiva estandarizado puede escribirse como la suma de dos componentes:
 $$\mathrm{MSPE}=\sigma_u^2+E\left[\sum_{j=1}^k(\hat{\beta}_j-\beta_j)X_{\mathrm{oos},j}\right]^2$$
 
@@ -4946,8 +4946,8 @@ posible.
 
 \subsubsection*{Estandarización usando las Medias y Varianzas de la Muestra}
 
-En la práctica, las medias y desviaciones estándar poblacionales de las variables originales no son cono-
-cidas. Por lo tanto, se utilizan las medias y varianzas de la muestra para estandarizar los regresores, y
+En la práctica, las medias y desviaciones estándar poblacionales de las variables originales no son conocidas. 
+Por lo tanto, se utilizan las medias y varianzas de la muestra para estandarizar los regresores, y
 se resta la media de la muestra de la variable dependiente.
 
 Dado que los regresores están estandarizados y la variable dependiente está centrada, se requiere un
@@ -5009,7 +5009,7 @@ en el que la observación no se utiliza para estimar $\beta$. Esta definición s
 el conjunto de datos en dos partes: una submuestra para estimación y una submuestra de “prueba” para
 simular la predicción fuera de la muestra. La primera se usa para estimar $\beta$, generando el estimador $\tilde{\beta}$,
 que podría obtenerse por MCO u otro método. Luego, este estimador se usa para hacer una predicción
-$Y_n$ para cada una de las ntest observaciones en la submuestra de prueba. El MSPE se estima con los
+$Y_n$ para cada una de las $n_{test}$ observaciones en la submuestra de prueba. El MSPE se estima con los
 errores de predicción resultantes:
 \begin{equation}
     \mathrm{MSPE}_{\text{split-sample}}=\frac{1}{n_{\mathrm{test}}}\sum\left(Y_i-Y_n^i\right)^2
@@ -5053,7 +5053,7 @@ trabajos empíricos con big data.
         \item Usar $\tilde{\beta}$ y la ecuación (\ref{eq:14.2}) para obtener los valores predecidos de $\hat{Y}$ y los 
         errores de predicción $Y-\hat{Y}$ para las observaciones en la submuestra 1.
         \item Usar la submuestra 1 como la submuestra de entrenamiento, estimar el MSPE con los valores predecidos
-        de la submuestra 1 y la ecuación (\ref{eq:14.5}). Lo llamaremos $\hat{MSPE}_1$.
+        de la submuestra 1 y la ecuación (\ref{eq:14.5}). Lo llamaremos $\widehat{MSPE}_1$.
         \item Repetir los pasos 2 a 4 usando la submuestra 2 como la submuestra apartada para entrenamiento, luego la 3, 
         y así sucesivamente hasta obtener m estimaciones de MSPE.
         \item Luego el estimador del MSPE de validación cruzada m-fold es el promedio de los m estimadores de MSPE:
@@ -5228,7 +5228,7 @@ MCO.
 
 \subsection*{Componentes Principales con Dos Variables}
 
-os componentes principales de un conjunto de variables estandarizadas X son combinaciones lineales
+Los componentes principales de un conjunto de variables estandarizadas X son combinaciones lineales
 de estas variables, construidas de manera que sean mutuamente incorrelacionados y capturen la mayor
 cantidad posible de información original. Específicamente, los pesos de la primera combinación lineal
 (primer componente principal) se eligen para maximizar su varianza, de modo que explique la mayor
