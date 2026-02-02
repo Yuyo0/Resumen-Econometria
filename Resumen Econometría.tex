@@ -1690,7 +1690,7 @@ significa que el término de error (que contiene a este factor) está correlacio
 $X_i$. Esto causa que el estimador MCO sea sesgado. Este sesgo no desaparece incluso en muestras 
 muy grandes, y el estimador MCO es inconsistente.
 
-Sea $\rho^2_{xu}$ la correlación entre $X_i$ y $u_i$, y que se cumplen el 2do y 3er supuesto de MCO, entonces el
+Sea $\rho_{xu}$ la correlación entre $X_i$ y $u_i$, y que se cumplen el 2do y 3er supuesto de MCO, entonces el
 estimador MCO tiene el límite:
 \begin{equation}
 \hat{\beta}_1 \xrightarrow{p} \beta_1 + \rho_{Xu} \frac{\sigma_u}{\sigma_X}
@@ -2156,11 +2156,11 @@ control es explícita. Si se cumple este supuesto alternativo, el estimador de M
 insesgado, pero los coeficientes MCO de las variables de control serán, en general, sesgados y no tendrán
 una interpretación causal.
 
-La distinción entre variables de interés y variables de control puede ser establecida de forma matemáti-
-camente precisa reemplazando el primer supuesto de mínimos cuadrados, es decir, el supuesto de esper-
-anza condicional igual a cero, por un supuesto denominado independencia de la media condicional.
-Consideremos una regresión con dos variables, en la cual $X_{1,i}$ es la variable de interés y $X_{2,i}$ es la vari-
-able de control. La independencia en media condicional requiere que la esperanza condicional de $u_i$ dados
+La distinción entre variables de interés y variables de control puede ser establecida de forma matemáticamente 
+precisa reemplazando el primer supuesto de mínimos cuadrados, es decir, el supuesto de esperanza 
+condicional igual a cero, por un supuesto denominado independencia de la media condicional.
+Consideremos una regresión con dos variables, en la cual $X_{1,i}$ es la variable de interés y $X_{2,i}$ es la variable 
+de control. La independencia en media condicional requiere que la esperanza condicional de $u_i$ dados
 $X_{1,i}$ y $X_{2,i}$ no dependa de $X_{1,i}$, aunque pueda depender de $X_{2,i}$. Es decir, $E(u_i|X_{1,i}, X_{2,i}) = E(u_i|X_{2,i})$
 independencia en media condicional.
 
@@ -2202,8 +2202,8 @@ sean las mejores.
     {Concepto Clave 7.4: $R^2$ y $R^2$ ajustado, qué nos dicen y qué no}
     El $R^2$ y el $R^2$ ajustado \textbf{nos dicen} si los regresores son buenos para predecir, o «explicar» los
 valores de la variable dependiente en la muestra de datos disponible. Si el $R^2$ (o el $R^2$ ajustado)
-está cerca de 1, entonces los regresores proporcionan buenas predicciones sobre la varia-
-ble dependiente en esa muestra, en el sentido de que la varianza de los residuos MCO es
+está cerca de 1, entonces los regresores proporcionan buenas predicciones sobre la variable 
+dependiente en esa muestra, en el sentido de que la varianza de los residuos MCO es
 pequeña comparada con la varianza de la variable dependiente. Si el $R^2$ (o el $R^2$ ajustado) está
 cercano a 0, es cierto todo lo contrario.
 
@@ -2292,7 +2292,7 @@ Existen dos métodos para hacerlo utilizando el software de regresión habitual,
 con los dos métodos del capítulo 8 para contrastar una restricción única con varios coeficientes. El primer
 método es el de utilizar el «Método 1», que consiste en calcular el estadístico F para contrastar la
 hipótesis. El error estándar de $\Delta \hat{Y}$ está dado por:
-$$ES(\Delta\hat{Y}) = \frac{|\Delta\hat{Y}|}{\sqrt{\frac{F}{v}}}$$
+$$ES(\Delta\hat{Y}) = \frac{|\Delta\hat{Y}|}{\sqrt{F}}$$
 
 donde v es el número de restricciones (en este caso, v = 1).
 
